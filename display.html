@@ -1,0 +1,50 @@
+<html>
+<head>
+    <title>Date and Factorial using JavaScript</title>
+
+    <script type="text/javascript">
+    
+                function displayDate() {
+            var today = new Date();
+            var dateStr = today.getDate() + "/" +
+                          (today.getMonth() + 1) + "/" +
+                          today.getFullYear();
+
+            document.getElementById("dateBox").value = dateStr;
+        }
+
+        
+        function calculateFactorial() {
+            var num = prompt("Enter a number to calculate factorial:", "");
+
+            if (num == null || num == "") {
+                alert("No number entered");
+            } else {
+                var n = parseInt(num);
+                var fact = 1;
+                var i;
+
+                if (n < 0) {
+                    alert("Factorial is not defined for negative numbers");
+                } else {
+                    for (i = 1; i <= n; i++) {
+                        fact = fact * i;
+                    }
+                    alert("The factorial of " + n + " is " + fact);
+                }
+            }
+        }
+    
+    </script>
+</head>
+
+<body>
+    <h3>JavaScript Program</h3>
+
+    <input type="button" value="Display Date" onclick="displayDate()" />
+    <input type="text" id="dateBox" />
+    <input type="button" value="Calculate Factorial" onclick="calculateFactorial()" />
+
+
+</body>
+</html>
